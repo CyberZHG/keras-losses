@@ -12,3 +12,13 @@ python setup.py install
 ```
 
 ## Usage
+
+### Ranking Loss
+
+![](https://user-images.githubusercontent.com/853842/46719694-29ed0400-cca1-11e8-9be5-9bf298952d90.png)
+
+```python
+from keras_losses import get_ranking_loss
+
+ranking_loss = get_ranking_loss(gamma=2.0, mp=2.5, mn=0.5)
+```
