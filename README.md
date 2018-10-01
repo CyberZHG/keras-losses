@@ -22,3 +22,14 @@ from keras_losses import get_ranking_loss
 
 ranking_loss = get_ranking_loss(gamma=2.0, mp=2.5, mn=0.5)
 ```
+
+### Weighted Categorical Cross-Entropy Loss
+
+![](https://user-images.githubusercontent.com/853842/46720488-3eca9700-cca3-11e8-845d-b44adc31df74.png)
+
+```python
+from keras_losses import get_weighted_categorical_crossentropy, get_weighted_sparse_categorical_crossentropy
+
+weighted_loss = get_weighted_categorical_crossentropy(weights=[0.8, 0.1, 0.2, 0.3, 0.4])
+weighted_loss = get_weighted_sparse_categorical_crossentropy(weights=[0.8, 0.1, 0.2, 0.3, 0.4])
+```

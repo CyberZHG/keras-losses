@@ -1,1 +1,2 @@
 from .ranking_loss import get_ranking_loss
+from .weighted_loss import get_weighted_categorical_crossentropy, get_weighted_sparse_categorical_crossentropy
