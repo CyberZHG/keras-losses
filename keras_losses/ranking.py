@@ -1,5 +1,8 @@
 import tensorflow as tf
-import keras.backend as K
+from .backend import backend as K
+
+
+__all__ = ['get_ranking_loss']
 
 
 def get_ranking_loss(gamma=2.0, mp=2.5, mn=0.5):
@@ -19,6 +22,6 @@ def get_ranking_loss(gamma=2.0, mp=2.5, mn=0.5):
             pos_score = scores[pos_label]
             top_values, top_indices = tf.nn.top_k(scores, k=2)
             neg_score = tf.cond(tf.equal(top_indices[0], pos_label), lambda: top_values[1], lambda: top_values[0])
-            return tf.log(1.0 + tf.exp(gamma * (mp - pos_score))) + tf.log(1.0 + tf.exp(gamma * (mn + neg_score)))
+            return K.log(1.0 + tf.exp(gamma * (mp - pos_score))) + K.log(1.0 + tf.exp(gamma * (mn + neg_score)))
         return tf.map_fn(_loss_elem, tf.range(tf.shape(y_true)[0]), dtype=K.floatx())
     return _loss

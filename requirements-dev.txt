@@ -1,2 +1,4 @@
 pycodestyle
 coverage
+tensorflow
+nose

@@ -1,9 +1,12 @@
-import keras
-import keras.backend as K
+from .backend import keras
+from .backend import backend as K
+
+
+__all__ = ['get_weighted_categorical_crossentropy', 'get_weighted_sparse_categorical_crossentropy']
 
 
 def get_weighted_categorical_crossentropy(weights):
-    """L = - \sum_i weights[i] y_true[i] \log(y_pred[i])
+    r"""L = - \sum_i weights[i] y_true[i] \log(y_pred[i])
 
     :param weights: a list of weights for each class.
 
@@ -18,7 +21,7 @@ def get_weighted_categorical_crossentropy(weights):
 
 
 def get_weighted_sparse_categorical_crossentropy(weights):
-    """L = - \sum_i weights[i] y_true[i] \log(y_pred[i])
+    r"""L = - \sum_i weights[i] y_true[i] \log(y_pred[i])
 
     :param weights: a list of weights for each class.
 

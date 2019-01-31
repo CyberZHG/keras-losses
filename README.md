@@ -33,3 +33,15 @@ from keras_losses import get_weighted_categorical_crossentropy, get_weighted_spa
 weighted_loss = get_weighted_categorical_crossentropy(weights=[0.8, 0.1, 0.2, 0.3, 0.4])
 weighted_loss = get_weighted_sparse_categorical_crossentropy(weights=[0.8, 0.1, 0.2, 0.3, 0.4])
 ```
+
+### CORAL Loss
+
+![](https://user-images.githubusercontent.com/853842/108617122-c23d4b00-744e-11eb-86e8-ee95fc03421a.png)
+
+![](https://user-images.githubusercontent.com/853842/108617126-c5383b80-744e-11eb-8aa0-e0f8acd69aa8.png)
+
+![](https://user-images.githubusercontent.com/853842/108617127-c79a9580-744e-11eb-82e3-f99b3618dea3.png)
+
+```python
+from keras_losses import coral_loss
+```
