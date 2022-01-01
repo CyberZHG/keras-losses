@@ -1,4 +1,4 @@
-from .backend import backend as K
+from tensorflow.keras import backend as K
 
 
 __all__ = ['coral_loss']
